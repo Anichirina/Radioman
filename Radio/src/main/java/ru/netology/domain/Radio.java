@@ -1,7 +1,5 @@
 package ru.netology.domain;
 public class Radio {
-    private int CurrentVolume;
-    private int CurrentChannel;
     private int maxVolume = 10;
     private int minVolume = 0;
     private int maxChannel = 9;
@@ -10,33 +8,55 @@ public class Radio {
     private int currentChannel;
 
     public void increaseChannel() {
-        if (currentChannel == maxChannel) {
-            this.currentChannel = minChannel;
+        if (currentChannel < maxChannel) {
+            currentChannel++;
             return;
         }
-        currentChannel++;
-    }
 
-    public void decreaseChannel() {
-        if (currentChannel == minChannel) {
+        if (currentChannel == maxChannel) {
             this.currentChannel = maxChannel;
             return;
         }
-        currentChannel--;
-    }
-
-    public void increaseVolume() {
-        if (currentVolume == maxVolume) {
+        if (currentChannel > maxChannel) {
+            this.currentChannel = minChannel;
             return;
         }
-        currentVolume++;
+    }
+
+    public void decreaseChannel() {
+        if(currentChannel>minChannel){
+            currentChannel--;
+            return;
+        }
+
+        if (currentChannel == minChannel) {
+            this.currentChannel = minChannel;
+            return;
+        }
+            }
+
+    public void increaseVolume() {
+        if (currentVolume < maxVolume) {
+            currentVolume++;
+            return;
+        }
+
+        if(currentVolume==maxVolume){
+            this.currentVolume=maxVolume;
+        }
+        return;
     }
 
     public void decreaseVolume() {
-        if (currentVolume == minVolume) {
+        if (currentVolume > minVolume) {
+            currentVolume--;
             return;
         }
-        currentVolume--;
+
+        if(currentVolume==minVolume){
+            this.currentVolume=minVolume;
+          }
+        return;
     }
 
     public int getCurrentChannel(){
