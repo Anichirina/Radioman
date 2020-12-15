@@ -1,4 +1,5 @@
 package ru.netology.domain;
+
 public class Radio {
     private int maxVolume = 10;
     private int minVolume = 0;
@@ -7,24 +8,32 @@ public class Radio {
     private int currentVolume;
     private int currentChannel;
 
-    public int getMaxVolume () {
+    public int getMaxVolume() {
+
         return maxVolume;
     }
-    public void setMaxVolume ( int maxVolume){
+
+    public void setMaxVolume(int maxVolume) {
         this.maxVolume = maxVolume;
     }
-    public int getMinChannel () {
+
+    public int getMinChannel() {
+
         return minChannel;
     }
-    public void setMinChannel ( int minChannel){
+
+    public void setMinChannel(int minChannel) {
         this.minChannel = minChannel;
     }
-    public int getMinVolume () {
+
+    public int getMinVolume() {
         return minVolume;
     }
-    public void setMinVolume ( int minVolume){
+
+    public void setMinVolume(int minVolume) {
         this.minVolume = minVolume;
     }
+
     public void increaseChannel() {
         if (currentChannel < maxChannel) {
             currentChannel++;
@@ -36,71 +45,80 @@ public class Radio {
             return;
         }
     }
-        public void decreaseChannel() {
-            if(currentChannel>minChannel) {
-                currentChannel--;
-                return;
-            }
 
-            if (currentChannel == minChannel) {
-                this.currentChannel = minChannel;
-                return;
-            }
+    public void decreaseChannel() {
+        if (currentChannel > minChannel) {
+            currentChannel--;
+            return;
+        }
+
+        if (currentChannel == minChannel) {
+            this.currentChannel = minChannel;
+            return;
+        }
     }
+
     public void increaseVolume() {
         if (currentVolume < maxVolume) {
             currentVolume++;
             return;
         }
-        if(currentVolume==maxVolume){
-            this.currentVolume=maxVolume;
+        if (currentVolume == maxVolume) {
+            this.currentVolume = maxVolume;
         }
         return;
     }
+
     public void decreaseVolume() {
         if (currentVolume > minVolume) {
             currentVolume--;
             return;
         }
-        if(currentVolume==minVolume){
-            this.currentVolume=minVolume;
-          }
+        if (currentVolume == minVolume) {
+            this.currentVolume = minVolume;
+        }
         return;
     }
-    public int getCurrentChannel(){
-            return currentChannel;
+
+    public int getCurrentChannel() {
+        return currentChannel;
+    }
+
+    public int getCurrentVolume() {
+        return currentVolume;
+    }
+
+    public void setCurrentVolume(int currentVolume) {
+        if (currentVolume > maxVolume) {
+            this.currentVolume = maxVolume;
+            return;
         }
-        public int getCurrentVolume() {
-            return currentVolume;
+        if (currentVolume < minVolume) {
+            this.currentVolume = minVolume;
+            return;
         }
-        public void setCurrentVolume(int currentVolume){
-            if (currentVolume > maxVolume) {
-                this.currentVolume = maxVolume;
-                return;
-            }
-            if (currentVolume < minVolume) {
-                this.currentVolume = minVolume;
-                return;
-            }
-            this.currentVolume = currentVolume;
+        this.currentVolume = currentVolume;
+    }
+
+    public void setCurrentChannel(int currentChannel) {
+        if (currentChannel > maxChannel) {
+            this.currentChannel = maxChannel;
+            return;
         }
-        public void setCurrentChannel ( int currentChannel){
-            if (currentChannel > maxChannel) {
-                this.currentChannel = maxChannel;
-                return;
-            }
-            if (currentChannel < minChannel) {
-                this.currentChannel = minChannel;
-                return;
-            }
-            this.currentChannel = currentChannel;
+        if (currentChannel < minChannel) {
+            this.currentChannel = minChannel;
+            return;
         }
-        public int getMaxChannel() {
-            return maxChannel;
-        }
-        public void setMaxChannel ( int maxChannel){
-            this.maxChannel = maxChannel;
-        }
+        this.currentChannel = currentChannel;
+    }
+
+    public int getMaxChannel() {
+        return maxChannel;
+    }
+
+    public void setMaxChannel(int maxChannel) {
+        this.maxChannel = maxChannel;
+    }
 
 }
 

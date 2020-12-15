@@ -27,6 +27,7 @@ class RadioTest {
         radio.increaseChannel();
         assertEquals(7, radio.getCurrentChannel());
     }
+
     @Test
     void increaseChannelmaxChannel() {
         Radio radio = new Radio();
@@ -34,6 +35,7 @@ class RadioTest {
         radio.increaseChannel();
         assertEquals(9, radio.getCurrentChannel());
     }
+
     @Test
     void decreaseChannel() {
         Radio radio = new Radio();
@@ -49,6 +51,7 @@ class RadioTest {
         radio.decreaseChannel();
         assertEquals(0, radio.getCurrentChannel());
     }
+
     @Test
     void upMaximumeChannel() {
         Radio radio = new Radio();
@@ -56,6 +59,7 @@ class RadioTest {
         radio.increaseChannel();
         assertEquals(9, radio.getCurrentChannel());
     }
+
     @Test
     void downminimumeChannel() {
         Radio radio = new Radio();
@@ -111,6 +115,7 @@ class RadioTest {
         radio.increaseVolume();
         assertEquals(10, radio.getCurrentVolume());
     }
+
     @Test
     public void increaseVolumeDownMinimum() {
         Radio radio = new Radio();
@@ -118,6 +123,7 @@ class RadioTest {
         radio.decreaseVolume();
         assertEquals(0, radio.getCurrentVolume());
     }
+
     @Test
     public void VolumeFromAnyValue() {
         Radio radio = new Radio();
@@ -125,6 +131,7 @@ class RadioTest {
 
         assertEquals(10, radio.getCurrentVolume());
     }
+
     @Test
     public void decreaseVolumeUpMaximum() {
         Radio radio = new Radio();
@@ -132,32 +139,37 @@ class RadioTest {
         radio.decreaseVolume();
         assertEquals(9, radio.getCurrentVolume());
     }
+
     @Test
-    public void workGetMaxChannel(){
+    public void workGetMaxChannel() {
         Radio radio = new Radio();
         radio.getMaxChannel();
         assertEquals(9, radio.getMaxChannel());
     }
+
     @Test
-    public void worksetMaxChannel(){
+    public void worksetMaxChannel() {
         Radio radio = new Radio();
         radio.setMaxChannel(10);
         assertEquals(10, radio.getMaxChannel());
     }
+
     @Test
-    public void workgetMinChannel(){
+    public void workgetMinChannel() {
         Radio radio = new Radio();
         radio.setMinChannel(-2);
         assertEquals(-2, radio.getMinChannel());
     }
+
     @Test
-    public void workgetMinVolume(){
+    public void workgetMinVolume() {
         Radio radio = new Radio();
         radio.setMinVolume(-2);
         assertEquals(-2, radio.getMinVolume());
     }
+
     @Test
-    public void workgetMaxVolume(){
+    public void workgetMaxVolume() {
         Radio radio = new Radio();
         radio.setMaxVolume(20);
         assertEquals(20, radio.getMaxVolume());
